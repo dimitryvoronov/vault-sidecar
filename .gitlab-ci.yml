@@ -1,16 +1,16 @@
-image: ${GV_REGISTRY_ADDRESS}/${GV_BUILD_IMAGE_ZULUJDK11_NAME}
+image: ${REGISTRY_ADDRESS}/${BUILD_IMAGE_ZULUJDK11_NAME}
 
 include:
   - project: 'infr/pipelines/service/ci/common'
     ref: v2
     file: '/public/dockerfile/trunk.yml'
   - project: 'infr/pipelines/service/ci/common'
-    ref: v2 
+    ref: v2
     file: '/public/conf/trunk.yml'
 build:docker:dev:
   before_script:
     - !reference [.generate_version, script]
     - VERSION_LIST="$FULL_VERSION $CI_COMMIT_REF_SLUG"
     - git clone --recursive
-      https://${GV_GITLAB_USERNAME}:${GV_GITLAB_PASSWORD}@${GV_DEPLOY_BASE_PATH}/external/vault.git
+      https://${GITLAB_USERNAME}:${GITLAB_PASSWORD}@${DEPLOY_BASE_PATH}/external/vault.git
       vault

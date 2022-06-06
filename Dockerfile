@@ -1,5 +1,5 @@
 # Build sidecar binary
-FROM dockerhub.devops.telekom.de/golang:1.15.6 AS builder
+FROM golang:1.18 AS builder
 
 
 COPY src /src
@@ -22,4 +22,3 @@ COPY vault /tmp/vault
 
 #RUN /usr/local/bin/user_setup
 ENTRYPOINT ["/usr/local/bin/vaultsidecar"]
-

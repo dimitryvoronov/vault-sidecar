@@ -1,11 +1,11 @@
 name: vaultsidecar
 group: infra
 title: Vault Sidecar
-team: SystemTeam
+team: Myteam
 summary: An application to configure Stargate API Gateway
 properties:
   deployment: kubernetes
   healthCheckPath: /
   pingPath: /
-  git: https://digihub-wbench.workbench.telekom.de/gitlab/infr/deployment/external/hashicorp-sidecar.git
+  git: https://gitlab_portal/gitlab/infr/deployment/external/hashicorp-sidecar.git
 technology: go
